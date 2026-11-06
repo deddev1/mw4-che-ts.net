@@ -28,7 +28,9 @@ interface Props {
   articlePublishedTime?: string;
   articleModifiedTime?: string;
   noindex?: boolean;
-  /** When set, canonical/og:url/hreflang use this path (e.g. blog URL for forum threads sourced from guides). */
+  /** Overrides default robots directives (e.g. noindex follow for forum threads that mirror a blog article). */
+  robots?: string;
+  /** When set, canonical/og:url/hreflang use this path instead of the current URL. */
   canonicalPath?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -42,6 +44,7 @@ const {
   articlePublishedTime,
   articleModifiedTime,
   noindex = false,
+  robots: robotsOverride,
   canonicalPath,
   jsonLd,
 } = Astro.props;
@@ -50,9 +53,11 @@ const canonical = canonicalPath
   ? canonicalUrl(canonicalPath)
   : canonicalUrl(Astro.url.pathname);
 const ogImageUrl = absoluteAssetUrl(ogImage);
-const robotsContent = noindex
-  ? 'noindex, nofollow'
-  : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+const robotsContent = robotsOverride
+  ? robotsOverride
+  : noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 ---
 
 <!doctype html>

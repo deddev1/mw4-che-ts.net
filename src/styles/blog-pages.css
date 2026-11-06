@@ -42,19 +42,33 @@
 @media (min-width: 640px) {
   .blog-card__footer {
     flex-direction: row;
-    align-items: center;
+    /* Bottom-align so "Read" buttons line up when date/meta wraps differently per card */
+    align-items: flex-end;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  /* Meta column must be allowed to shrink or it overflows and sits under the button */
+  .blog-card__footer > .blog-card__footer-meta {
+    flex: 1 1 0%;
+    min-width: 0;
   }
 }
 
 .blog-card__footer-meta {
-  display: inline-flex;
+  display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 0.4rem;
   margin: 0;
   min-width: 0;
+  overflow: hidden;
+}
+
+.blog-card__footer-meta > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -74,6 +88,7 @@
 @media (min-width: 640px) {
   .blog-card__read {
     width: auto;
+    flex-shrink: 0;
     justify-content: flex-start;
   }
 }

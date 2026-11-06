@@ -63,9 +63,14 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
   }
 
   if (path.startsWith('/forum/')) {
+    const slug = path.replace(/^\/forum\//, '').replace(/\/$/, '');
+    const thread = forumPosts.find((p) => p.slug === slug);
+    /** Threads that summarize a blog guide are noindexed; omit from sitemap so crawlers focus on `/blog/...`. */
+    if (thread?.sourcePath) {
+      return undefined;
+    }
     item.priority = 0.6;
     item.changefreq = 'weekly';
-    const slug = path.replace(/^\/forum\//, '').replace(/\/$/, '');
     item.lastmod = lastmodForForumPost(slug);
     return item;
   }
