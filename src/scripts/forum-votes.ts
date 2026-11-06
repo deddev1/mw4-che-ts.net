@@ -1,4 +1,4 @@
-const storagePrefix = 'rust-cheats-forum-vote:';
+const storagePrefix = 'mw4-cheats-forum-vote:';
 
 export function initForumVotes(): void {
   document.querySelectorAll<HTMLElement>('[data-forum-card], [data-forum-vote]').forEach((post) => {

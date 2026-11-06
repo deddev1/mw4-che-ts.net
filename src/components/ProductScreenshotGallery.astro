@@ -20,7 +20,11 @@ const first = images[0];
   data-product-gallery
 >
   <div class="relative min-w-0 overflow-hidden rounded-xl border border-border bg-muted/20">
-    <div class="product-gallery__main cursor-zoom-in overflow-hidden">
+    <div
+      class="product-gallery__main cursor-zoom-in overflow-hidden"
+      role="group"
+      aria-label={first?.alt}
+    >
       {
         first && (
           <ResponsiveImage
@@ -42,7 +46,7 @@ const first = images[0];
       size="sm"
       class="pointer-events-none absolute bottom-3 left-3 shadow-sm"
     >
-      Rust cheats gameplay
+      MW4 cheats gameplay
     </Badge>
   </div>
   {
@@ -63,7 +67,7 @@ const first = images[0];
             class:list={['product-gallery__thumb', i === 0 && 'is-active']}
             role="tab"
             aria-selected={i === 0 ? 'true' : 'false'}
-            aria-label={`Screenshot ${i + 1}`}
+            aria-label={img.alt || `Screenshot ${i + 1}`}
             data-product-gallery-thumb
             data-index={i}
             data-src={img.src}

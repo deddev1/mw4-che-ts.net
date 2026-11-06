@@ -1,5 +1,5 @@
 /**
- * Unique titles/descriptions per route — all Rust-focused, no duplicate SERP copy.
+ * Unique titles/descriptions per route — all MW4-focused, no duplicate SERP copy.
  * Titles ~50–60 chars; descriptions ~140–155 chars.
  */
 
@@ -10,79 +10,79 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Buy Rust Cheats 2026 | Undetected ESP & Aimbot',
+    title: 'Buy MW4 Cheats 2026 | Undetected ESP & Aimbot',
     description:
-      'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Compare Lite, Pro and Elite at rust-cheats.net.',
+      'Undetected Modern Warfare 4 tools for PC—player ESP, loot markers, aim assist, no recoil and stream-proof overlays. Compare Lite, Pro and Elite at mw4-cheats.net.',
   },
-  '/products/rust-cheats/': {
-    title: 'All Rust Cheat Products | Lite, Pro, Elite Hub',
+  '/products/mw4-cheats/': {
+    title: 'All MW4 Cheat Products | Lite, Pro, Elite Hub',
     description:
-      'Products hub for undetected rust cheats on Steam PC—compare Lite, Pro and Elite tiers plus HWID, UGC and utilities. Module lists, buy guides and checkout.',
+      'Hub for MW4 cheat tiers and utilities: Lite, Pro, Elite, HWID Spoofer, UGC and Unlock All—feature tables, screenshots and Zadeyo checkout links in one place.',
   },
-  '/products/rust-cheats/elite/': {
-    title: 'Rust Elite Cheats for Sale | ESP, Aimbot, Farm Bot',
+  '/products/mw4-cheats/elite/': {
+    title: 'MW4 Elite Cheats for Sale | Full Suite & Priority Patches',
     description:
-      'Purchase Elite tier: skeleton ESP, aimbot, no recoil, auto farm helpers, Skin Changer and priority EAC patch queue for Official and Community servers.',
+      'Elite tier: full ESP and radar, aimbot, no recoil, Camo & XP Helpers, Skin Changer, and priority loader delivery after Ricochet patches—Multiplayer and Warzone.',
   },
-  '/products/rust-cheats/hwid-spoofer/': {
-    title: 'Rust HWID Spoofer for Sale | Reset After EAC Ban',
+  '/products/mw4-cheats/hwid-spoofer/': {
+    title: 'MW4 HWID Spoofer for Sale | Reset After Ricochet Ban',
     description:
-      'Buy a Rust HWID spoofer to rotate disk, MAC and GPU IDs after an Easy Anti-Cheat hardware flag. Portal setup guide and Discord support included.',
+      'Hardware fingerprint reset for PC after Ricochet flags—disk, MAC and GPU rotation with portal walkthrough. Pair with a clean Steam account when reputation is burned.',
   },
-  '/products/rust-cheats/ugc/': {
-    title: 'Rust UGC Recovery Tool | Steam & Ban Appeals',
+  '/products/mw4-cheats/ugc/': {
+    title: 'MW4 UGC Recovery Tool | Steam & Ban Appeals',
     description:
-      'UGC appeal workspace for Steam holds, EAC bans and server restrictions—document cases, track status and rebuild account access with structured workflows.',
+      'Case workspace for Steam restrictions and Ricochet appeals—timelines, evidence notes and status tracking so you can coordinate Activision-facing follow-ups.',
   },
-  '/products/rust-cheats/unlock-all/': {
+  '/products/mw4-cheats/unlock-all/': {
     title: 'Unlock All & Skin Changer | Local Cosmetics',
     description:
-      'Unlock All and Skin Changer for local weapon and clothing previews on Steam PC—client-side cosmetics without market purchases; standalone or with Elite tier.',
+      'Local-only weapon and operator cosmetic previews on PC—see skins in your client without market spend; standalone Unlock All or bundled with Elite where listed.',
   },
-  '/products/rust-cheats/utilities/': {
+  '/products/mw4-cheats/utilities/': {
     title: 'Compare Cheat Utilities | HWID Spoofer & UGC',
     description:
-      'Cheat utility comparison for Steam PC—HWID Spoofer vs UGC recovery use cases, feature lists and product pages. Skin Changer details live on Unlock All.',
+      'Side-by-side HWID Spoofer vs UGC: when to rotate hardware IDs vs organize ban appeals. Links to full specs; Skin Changer lives on the Unlock All product page.',
   },
   '/blog/': {
     title: 'Buy Guides & Checkout Tips | Lite, Pro, Elite',
     description:
-      'Step-by-step buy guides and checkout tips—tier picks, ESP and aimbot modules, HWID recovery after bans, and secure payment flow at rust-cheats.net.',
+      'Long-form MW4 guides: tier picks, Ricochet patch checklists, ESP tuning, aimbot and HWID recovery—read before you open secure checkout.',
   },
   '/forum/': {
     title: 'Buyer Forum Q&A | ESP, Radar & Spoofer Help',
     description:
-      'Rust buyer forum: ESP and radar setup Q&A from our guides—overlay tuning, HWID tools, wipe readiness and tier picks before checkout.',
+      'Short Q&amp;A threads from our guides—overlay distance, radar noise, spoofer prep and post-patch testing. Full detail stays on the linked blog posts.',
   },
   '/reviews/': {
-    title: 'Rust Cheats Reviews | Buyer Ratings & Feedback',
+    title: 'MW4 Cheats Reviews | Buyer Ratings & Feedback',
     description:
-      'Read verified Rust Cheats reviews for Elite ESP and aimbot, HWID Spoofer, UGC recovery and Skin Changer—real buyer ratings before you checkout.',
+      'Buyer quotes on Elite combat tools, spoofer results, UGC flows and Skin Changer—use as social proof alongside the feature pages and FAQ.',
   },
   '/faq/': {
-    title: 'Buying FAQ | Rust Tiers, Checkout & EAC Risk',
+    title: 'Buying FAQ | MW4 Tiers, Checkout & Ricochet Risk',
     description:
-      'FAQ before you buy: Windows and Steam setup, Lite vs Pro vs Elite, ban risk, checkout delivery and HWID resets—clear answers on rust-cheats.net.',
+      'Quick answers: supported platforms, tier differences, ban risk, delivery after purchase and HWID limits—filter by topic or jump to a full guide.',
   },
   '/terms/': {
-    title: 'Rust Cheats Terms of Sale | License & Refunds',
+    title: 'MW4 Cheats Terms of Sale | License & Refunds',
     description:
-      'Legal terms for purchasing Rust cheat licenses on rust-cheats.net—delivery, personal-use limits, refunds, EAC risk and acceptable product use.',
+      'License scope, refunds, personal-use limits, third-party risk and Ricochet policy context for purchases made through mw4-cheats.net checkout links.',
   },
   '/about/': {
     title: 'About Our Cheats Store | Steam PC Tools',
     description:
-      'Meet the rust-cheats.net cheats store team—tiers, utilities, wipe-day loader updates and Discord help after checkout on Steam PC.',
+      'Who runs mw4-cheats.net: MW4-focused storefront, patch-day loader updates, utilities lineup and Discord-led support after you complete checkout.',
   },
   '/support/': {
-    title: 'Rust Cheats Discord Support | Loader Help Tickets',
+    title: 'MW4 Cheats Discord Support | Loader Help Tickets',
     description:
-      'Discord support for loader errors, HWID Spoofer setup and checkout—open a ticket with your order ID, issue type and screenshots for fast help.',
+      'Open a Discord ticket with order ID, Windows build and screenshots—loader failures, spoofer steps and portal access, scoped to products you purchased.',
   },
   '/privacy/': {
     title: 'Privacy Policy | Data, Cookies & Your Rights',
     description:
-      'Privacy policy for rust-cheats.net—cookies, analytics, Discord ticket data, checkout partners, retention and your rights when browsing or purchasing.',
+      'What mw4-cheats.net collects locally (theme), what checkout partners handle (payments), Discord ticket content and how to request deletion or export.',
   },
 };
 

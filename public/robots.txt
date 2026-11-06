@@ -3,6 +3,6 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://rust-cheats.net/sitemap-index.xml
+Sitemap: https://mw4-cheats.net/sitemap-index.xml
 
-# RSS: https://rust-cheats.net/rss.xml
+# RSS: https://mw4-cheats.net/rss.xml

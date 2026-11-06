@@ -1,5 +1,5 @@
 export declare const CHECKOUT_URLS: {
-  readonly rust: string;
+  readonly mw4: string;
   readonly skinChanger: string;
   readonly hwidSpoofer: string;
   readonly ugc: string;

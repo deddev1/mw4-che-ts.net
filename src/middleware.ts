@@ -1,10 +1,4 @@
 import { defineMiddleware } from 'astro:middleware';
-import { resolveCheckoutPathRedirect } from './config/checkout-redirects.mjs';
 
-export const onRequest = defineMiddleware((context, next) => {
-  const destination = resolveCheckoutPathRedirect(new URL(context.request.url).pathname);
-  if (destination) {
-    return context.redirect(destination, 302);
-  }
-  return next();
-});
+/** Checkout hops are served by static pages in src/pages/go/ (self-canonical HTML + JS replace to Zadeyo). */
+export const onRequest = defineMiddleware((_context, next) => next());

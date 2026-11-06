@@ -4,18 +4,15 @@ import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://rust-cheats.net',
+  site: 'https://mw4-cheats.net',
   trailingSlash: 'always',
   redirects: {
-    '/cheats/': '/products/rust-cheats/',
-    '/cheats/lite/': '/products/rust-cheats/',
-    '/cheats/pro/': '/products/rust-cheats/',
-    '/cheats/elite/': '/products/rust-cheats/elite/',
+    '/cheats/': '/products/mw4-cheats/',
+    '/cheats/lite/': '/products/mw4-cheats/',
+    '/cheats/pro/': '/products/mw4-cheats/',
+    '/cheats/elite/': '/products/mw4-cheats/elite/',
     '/cheats/compare/': '/blog/lite-vs-pro/',
     '/contact/': '/support/',
-    '/products/dota-2-cheats/': '/products/rust-cheats/',
-    '/products/dota-2-cheats/elite/': '/products/rust-cheats/elite/',
-    '/products/dota-2-cheats/utilities/': '/products/rust-cheats/utilities/',
   },
   compressHTML: true,
   prefetch: {

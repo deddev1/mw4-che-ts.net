@@ -101,7 +101,22 @@ function initThemeMetaColor() {
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 }
 
+import { initThemeController } from '@starwind-ui/runtime/theme';
+
+function initTheme() {
+  try {
+    const legacy = localStorage.getItem('starwind-theme');
+    if (legacy && !localStorage.getItem('colorTheme')) {
+      localStorage.setItem('colorTheme', legacy);
+    }
+  } catch {
+    /* ignore */
+  }
+  initThemeController(document, { defaultTheme: 'dark' });
+}
+
 function bootSite() {
+  initTheme();
   initFonts();
   initFaqFilters();
   initNavHighlight();
@@ -115,3 +130,8 @@ if (document.readyState === 'loading') {
 } else {
   bootSite();
 }
+
+document.addEventListener('astro:after-swap', () => {
+  initTheme();
+  initNavHighlight();
+});

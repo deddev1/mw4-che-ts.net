@@ -1,5 +1,6 @@
 ---
 import { CHECKOUT_SLUGS, CHECKOUT_SLUG_TO_PRODUCT, checkoutExternalUrl } from '../../config/checkout';
+import { canonicalUrl } from '../../config/seo';
 
 export function getStaticPaths() {
   return Object.values(CHECKOUT_SLUGS).map((slug) => ({ params: { slug } }));
@@ -13,6 +14,7 @@ if (!product) {
 }
 
 const destination = checkoutExternalUrl(product);
+const selfUrl = canonicalUrl(`/go/${slug}/`);
 ---
 
 <!doctype html>
@@ -22,7 +24,7 @@ const destination = checkoutExternalUrl(product);
     <meta http-equiv="refresh" content={`0;url=${destination}`} />
     <meta name="robots" content="noindex, nofollow" />
     <title>Redirecting to secure checkout…</title>
-    <link rel="canonical" href={destination} />
+    <link rel="canonical" href={selfUrl} />
   </head>
   <body>
     <p>Redirecting to secure checkout… <a href={destination}>Continue</a></p>

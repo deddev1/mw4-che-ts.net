@@ -29,27 +29,27 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const elite = link('Rust Elite', productPath('elite'));
+const elite = link('MW4 Elite', productPath('elite'));
 const lite = link('Lite tier (ESP & radar)', ROUTES.products);
 const pro = link('Pro tier (aimbot & no recoil)', ROUTES.products);
-const productsHub = link('Rust cheat products', ROUTES.products);
+const productsHub = link('MW4 cheat products', ROUTES.products);
 const hwid = link('HWID Spoofer', productPath('hwid-spoofer'));
 const ugc = link('UGC', productPath('ugc'));
 const skin = link('Skin Changer', productPath('unlock-all'));
 const faqPage = link('full FAQ', ROUTES.faq);
 const blog = link('blog guides', ROUTES.blog);
 
-const guideFeatures = link('Rust cheats features guide', blogPostPath('features'));
+const guideFeatures = link('MW4 cheats features guide', blogPostPath('features'));
 const guideLiteVsPro = link('Lite vs Pro guide', blogPostPath('lite-vs-pro'));
 const guideElite = link('Elite tier guide', blogPostPath('elite'));
 const guideEsp = link('ESP and radar setup guide', blogPostPath('esp'));
-const guidePatch = link('EAC patch day checklist', blogPostPath('eac-patch'));
-const guideBuy = link('how to buy Rust cheats in 2026', blogPostPath('buy-guide'));
+const guidePatch = link('Ricochet patch day checklist', blogPostPath('ricochet-patch'));
+const guideBuy = link('how to buy MW4 cheats in 2026', blogPostPath('buy-guide'));
 const guideExternal = link('external cheat guide', blogPostPath('external'));
 const guideStream = link('stream-proof setup guide', blogPostPath('stream-proof'));
-const guideAdmin = link('F1 console and admin commands guide', blogPostPath('cheat-codes'));
+const guideAdmin = link('Private Match vs live-server loader guide', blogPostPath('cheat-codes'));
 const guideHwid = link('HWID spoofer vs new account guide', blogPostPath('hwid'));
-const guideEacInit = link('EAC failed to initialize troubleshooting guide', blogPostPath('eac-error'));
+const guideEacInit = link('Ricochet failed to initialize troubleshooting guide', blogPostPath('ricochet-error'));
 const guideRecoil = link('aimbot and recoil scripts guide', blogPostPath('aimbot'));
 
 export const siteFaqs: SiteFaqItem[] = [
@@ -57,29 +57,29 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'status',
     topic: 'setup',
     icon: 'faqStatus',
-    q: 'Where do I check if Rust cheats are online?',
-    a: a('The live status banner is on rust-cheats.net and in the Discord #status channel. Always check it after a Rust update, a force wipe patch, or an Easy Anti-Cheat (EAC) update.'),
+    q: 'Where do I check if MW4 cheats are online?',
+    a: a('The live status banner is on mw4-cheats.net and in the Discord #status channel. Always check it after a MW4 update, a major season patch, or a Ricochet Anti-Cheat update.'),
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Rust, and start the loader before the game so EAC sees a clean launch order.'),
+    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching MW4, and start the loader before the game so Ricochet sees a clean launch order.'),
   },
   {
     id: 'ban-risk',
     topic: 'safety',
     icon: 'faqBanRisk',
-    q: 'Can I get banned using Rust cheats?',
-    a: a('Yes—any third-party software carries risk. EAC, Facepunch server-side checks and admin reports all evolve, and Rust bans can follow your Steam account and hardware. Read the current status and accept the risk before use.'),
+    q: 'Can I get banned using MW4 cheats?',
+    a: a('Yes—any third-party software carries risk. Ricochet, Activision server-side checks and admin reports all evolve, and MW4 bans can follow your Steam account and hardware. Read the current status and accept the risk before use.'),
   },
   {
     id: 'platforms',
     topic: 'setup',
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
-    a: a('Rust on Steam for PC, Windows 10/11 64-bit only. Rust Console Edition, macOS and Linux are not supported.'),
+    a: a('MW4 on Steam or Battle.net for PC, Windows 10/11 64-bit only. MW4 Console Edition, macOS and Linux are not supported.'),
   },
   {
     id: 'license-move',
@@ -99,8 +99,8 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'what-is-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What is Rust ESP and what does it show?',
-    a: `Player ESP draws boxes, names, health, distance and skeletons through walls and terrain. Loot ESP marks crates, barrels, stashes, ore nodes and dropped items. ${lite} covers the full awareness overlay. ${pro} and ${elite} add aim assist on top. Setup details are in the ${guideEsp}.`,
+    q: 'What is MW4 ESP and what does it show?',
+    a: `Player ESP draws boxes, names, health, distance and skeletons through walls and terrain. Equipment ESP marks supply crates, killstreaks, loadout caches, and dropped weapons. ${lite} covers the full awareness overlay. ${pro} and ${elite} add aim assist on top. Setup details are in the ${guideEsp}.`,
     scopes: ['lite', 'pro', 'elite'],
   },
   {
@@ -108,14 +108,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqEspVsScripts',
     q: 'What is the difference between ESP and aimbot?',
-    a: `ESP and radar are information overlays—they never move your mouse. Aimbot, Soft Aim and No Recoil are aim assist modules on ${pro} and ${elite}. You can run ESP-only on ${lite} and keep a much quieter footprint on a server.`,
+    a: `ESP and radar are information overlays—they never move your mouse. Aimbot, Soft Aim and No Recoil are aim assist modules on ${pro} and ${elite}. You can run ESP-only on ${lite} and keep a much quieter footprint in a lobby.`,
   },
   {
     id: 'which-tier-esp',
     topic: 'plans',
     icon: 'faqWhichTierEsp',
     q: 'Which tier do I need for ESP only?',
-    a: `${lite} is awareness only: Player ESP, Loot & Resource ESP, radar, FOV hack and stream-proof overlay. ${pro} adds Aimbot, Soft Aim and No Recoil. ${elite} adds farm helpers, Skin Changer and priority patches.`,
+    a: `${lite} is awareness only: Player ESP, Equipment & Streak ESP, radar, FOV hack and stream-proof overlay. ${pro} adds Aimbot, Soft Aim and No Recoil. ${elite} adds camo helpers, Skin Changer and priority patches.`,
     scopes: ['lite'],
   },
   {
@@ -123,7 +123,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
     q: 'Which tier includes Aimbot and No Recoil?',
-    a: `${pro} ships Aimbot, Soft Aim, Bone Select, Trigger Bot and No Recoil / Spread. ${elite} includes everything in Pro plus Auto Farm Helpers and Skin Changer. ${lite} has no aim assist—it is overlay only.`,
+    a: `${pro} ships Aimbot, Soft Aim, Bone Select, Trigger Bot and No Recoil / Spread. ${elite} includes everything in Pro plus Camo & XP Helpers and Skin Changer. ${lite} has no aim assist—it is overlay only.`,
     scopes: ['pro'],
   },
   {
@@ -138,8 +138,8 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'no-recoil',
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
-    q: 'How does No Recoil work in Rust?',
-    a: `No Recoil / Spread compensates for weapon recoil with per-weapon profiles—AK, LR-300, MP5, M249, bolt and more. Keep compensation below 100% so sprays still look natural, and test each weapon on a private or practice server before wiping your kit on a live one.`,
+    q: 'How does No Recoil work in MW4?',
+    a: `No Recoil / Spread compensates for weapon recoil with per-weapon profiles—AK, TAQ-56, VEL 46, M249, bolt and more. Keep compensation below 100% so sprays still look natural, and test each weapon in Private Match before taking the same settings into live Multiplayer or Warzone.`,
     scopes: ['pro', 'elite'],
   },
   {
@@ -147,14 +147,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do you rank Lite vs Pro vs Elite?',
-    a: `ESP and radar only → ${lite}. Gunfights with aim assist → ${pro}. Full suite, farm helpers and priority patches → ${elite}. Compare on each cheat page, in the ${guideLiteVsPro}, or in the ${faqPage}.`,
+    a: `ESP and radar only → ${lite}. Gunfights with aim assist → ${pro}. Full suite, camo helpers and priority patches → ${elite}. Compare on each cheat page, in the ${guideLiteVsPro}, or in the ${faqPage}.`,
   },
   {
     id: 'elite-slots',
     topic: 'plans',
     icon: 'faqEliteSlots',
     q: 'Why is Elite limited slots?',
-    a: `Elite is a private build with direct dev support and priority patch delivery. Slot caps keep patch cycles fast, especially on Rust update and EAC patch days. Check the status banner before checkout, or read the ${guideElite}.`,
+    a: `Elite is a private build with direct dev support and priority patch delivery. Slot caps keep patch cycles fast, especially on MW4 update and Ricochet patch days. Check the status banner before checkout, or read the ${guideElite}.`,
     scopes: ['elite'],
   },
   {
@@ -168,7 +168,7 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'undetected',
     topic: 'safety',
     icon: 'faqUndetected',
-    q: 'Are undetected Rust cheats guaranteed?',
+    q: 'Are undetected MW4 cheats guaranteed?',
     a: a('No. Undetected is the current status on the product page—not a permanent guarantee. Stop if the build shows updating, testing or detected, and never play on your main account while a status is unclear.'),
   },
   {
@@ -176,7 +176,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEspSafer',
     q: 'Is ESP-only safer than aimbot?',
-    a: a('ESP is quieter than an obvious aimbot or no-recoil pattern in a killcam, but it is still a cheat. Admins, clips and EAC do not ignore overlays because aim assist is off. Wallbang-free play and sensible reaction timing reduce reports.'),
+    a: a('ESP is quieter than an obvious aimbot or no-recoil pattern in a killcam, but it is still a cheat. Admins, clips and Ricochet do not ignore overlays because aim assist is off. Wallbang-free play and sensible reaction timing reduce reports.'),
   },
   {
     id: 'hwid-when',
@@ -190,15 +190,15 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'hwid-after-ban',
     topic: 'safety',
     icon: 'faqHwidWhen',
-    q: 'Do I need a new account and a spoofer after an EAC ban?',
-    a: `Usually both: a new Steam account with Rust, plus ${hwid} if the ban is tied to your hardware. Read the ${guideHwid} before buying anything, and never reuse the banned account on your main PC.`,
+    q: 'Do I need a new account and a spoofer after a Ricochet ban?',
+    a: `Usually both: a new Steam account with MW4, plus ${hwid} if the ban is tied to your hardware. Read the ${guideHwid} before buying anything, and never reuse the banned account on your main PC.`,
   },
   {
     id: 'ugc-what',
     topic: 'products',
     icon: 'faqUgcWhat',
     q: 'What is UGC?',
-    a: `${ugc} (Unban & Governance Control) is an appeal workspace for Facepunch and EAC bans and Steam restrictions—custom workflows and case tracking, not a guaranteed unban service.`,
+    a: `${ugc} (Unban & Governance Control) is an appeal workspace for Activision and Ricochet bans and Steam restrictions—custom workflows and case tracking, not a guaranteed unban service.`,
     scopes: ['ugc'],
   },
   {
@@ -206,22 +206,22 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqSkinChanger',
     q: 'Does Skin Changer modify my Steam inventory?',
-    a: `${skin} previews weapon skins, clothing and workshop items locally on your client. Other players see your real inventory. Included with ${elite}; available standalone for cosmetic preview only.`,
+    a: `${skin} previews weapon and operator skins from the in-game catalog locally on your client. Other players see your real inventory. Included with ${elite}; available standalone for cosmetic preview only.`,
     scopes: ['unlock-all'],
   },
   {
     id: 'external-loader',
     topic: 'products',
     icon: 'faqExternalLoader',
-    q: 'Is the loader injected into the Rust folder?',
-    a: `Rust Cheats runs external with cloud config sync—no files are written into the Rust install directory. EAC risk still applies. See the ${guideExternal} and ${productsHub}.`,
+    q: 'Is the loader injected into the MW4 folder?',
+    a: `MW4 Cheats runs external with cloud config sync—no files are written into the MW4 install directory. Ricochet risk still applies. See the ${guideExternal} and ${productsHub}.`,
   },
   {
     id: 'blog-vs-cheats',
     topic: 'blog',
     icon: 'faqBlogVsCheats',
-    q: 'Are F1 admin commands the same as Rust cheats?',
-    a: `No. F1 console commands like noclip, god and give only work for admins on servers you own or moderate. Paid Rust cheats are separate products for live servers—see ${lite}, ${pro} and ${elite}, and the ${guideAdmin}.`,
+    q: 'Are Private Match settings the same as MW4 cheats?',
+    a: `No. Private Match bot settings and dev toggles are not the same as paid MW4 cheats for public lobbies. Live Multiplayer and Warzone need a loader from mw4-cheats.net—see ${lite}, ${pro} and ${elite}, and the ${guideAdmin}.`,
   },
   {
     id: 'blog-setup',
@@ -242,7 +242,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoLite',
     q: 'Who should stay on Lite?',
-    a: `Players who only want awareness—Player ESP, Loot ESP and radar—and will not touch aim assist. If you keep wanting recoil control, buy ${pro} instead.`,
+    a: `Players who only want awareness—Player ESP, Equipment ESP and radar—and will not touch aim assist. If you keep wanting recoil control, buy ${pro} instead.`,
     scopes: ['lite'],
   },
   {
@@ -250,7 +250,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Pro?',
-    a: `PvP players who want Aimbot, Soft Aim and No Recoil with ESP and radar included. Pro is the most popular tier at rust-cheats.net.`,
+    a: `PvP players who want Aimbot, Soft Aim and No Recoil with ESP and radar included. Pro is the most popular tier at mw4-cheats.net.`,
     scopes: ['pro'],
   },
   {
@@ -258,67 +258,67 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoElite',
     q: 'Who should buy Elite?',
-    a: `Operators who want Auto Farm Helpers, Skin Changer and priority patch delivery when slots are open.`,
+    a: `Operators who want Camo & XP Helpers, Skin Changer and priority patch delivery when slots are open.`,
     scopes: ['elite'],
   },
   {
     id: 'eac-update',
     topic: 'safety',
     icon: 'faqEacUpdate',
-    q: 'What should I do after an EAC or Rust update?',
-    a: a('Check rust-cheats.net status and Discord #status. Do not launch until the banner shows online. Reload your loader, then use conservative presets and test on a quiet server first. The EAC patch day checklist covers the full routine.'),
+    q: 'What should I do after a Ricochet or MW4 update?',
+    a: a('Check mw4-cheats.net status and Discord #status. Do not launch until the banner shows online. Reload your loader, then use conservative presets and test on a quiet server first. The Ricochet patch day checklist covers the full routine.'),
   },
   {
-    id: 'eac-init',
+    id: 'ricochet-init',
     topic: 'setup',
     icon: 'faqEacUpdate',
-    q: 'EAC says it failed to initialize—is that a ban?',
-    a: `Usually not. It is most often a broken EAC install, a service conflict or a blocked driver. Verify Rust files in Steam, reinstall EAC from the Rust folder and restart before assuming a ban. See the ${guideEacInit}; if it is a real ban, check ${ugc}.`,
+    q: 'Ricochet says it failed to initialize—is that a ban?',
+    a: `Usually not. It is most often a broken Ricochet install, a service conflict or a blocked driver. Verify MW4 files in Steam, reinstall Ricochet from the MW4 folder and restart before assuming a ban. See the ${guideEacInit}; if it is a real ban, check ${ugc}.`,
   },
   {
     id: 'discord-help',
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'How do I get install help?',
-    a: a('Open Discord after purchase with your order email, Windows version and Rust build number. Staff walk through loader setup live.'),
+    a: a('Open Discord after purchase with your order email, Windows version and MW4 build number. Staff walk through loader setup live.'),
   },
   {
     id: 'server-types',
     topic: 'plans',
     icon: 'faqServerModes',
-    q: 'Do tiers work on Official, Community and Modded servers?',
-    a: `Yes—${lite}, ${pro} and ${elite} include presets for Official, Community and Modded servers in the portal. Tune ESP distance, aim FOV and smoothing before your first raid or monument run.`,
+    q: 'Do tiers work on Multiplayer, Warzone, and Private Match?',
+    a: `Yes—${lite}, ${pro} and ${elite} include presets for Multiplayer, Warzone, and Private Match in the portal. Tune ESP distance, aim FOV and smoothing before your first match or map push.`,
   },
   {
     id: 'zoom-hack',
     topic: 'esp',
     icon: 'faqZoomHack',
     q: 'Which tier includes FOV Hack?',
-    a: `FOV Hack ships on ${lite} and carries through ${pro} and ${elite}. A wider field of view helps in base fights and open-field PvP, but keep it near the default range so the server does not flag it.`,
+    a: `FOV Hack ships on ${lite} and carries through ${pro} and ${elite}. A wider field of view helps in building fights and open-field PvP, but keep it near the default range so the server does not flag it.`,
     scopes: ['lite'],
   },
   {
     id: 'loot-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What does Loot & Resource ESP highlight?',
-    a: `Crates, barrels, stashes, airdrops, ore and tree nodes, and dropped items—filtered by type and distance. All tiers include it, and the ${guideEsp} explains how to keep the screen readable.`,
+    q: 'What does Equipment & Streak ESP highlight?',
+    a: `Supply crates, care packages, loadout caches, streak rewards, plates, ammo, and dropped weapons—filtered by type and distance. All tiers include it, and the ${guideEsp} explains how to keep the screen readable.`,
     scopes: ['lite', 'pro', 'elite'],
   },
   {
     id: 'auto-farm',
     topic: 'scripts',
     icon: 'faqAutoFarm',
-    q: 'Which tier includes Auto Farm Helpers?',
-    a: `Auto Farm Helpers for resource and loot routes are ${elite} only. ${pro} covers aim assist without farm automation.`,
+    q: 'Which tier includes Camo & XP Helpers?',
+    a: `Camo & XP Helpers for camo grinds and contract routes are ${elite} only. ${pro} covers aim assist without automation helpers.`,
     scopes: ['elite'],
   },
   {
     id: 'private-cheats',
     topic: 'safety',
     icon: 'faqPrivateCheats',
-    q: 'What are private Rust cheats?',
-    a: a('Private means per-user keys and maintained builds—not public zip packs. Rust Cheats ships portal delivery for ESP, aim assist and radar tiers.'),
+    q: 'What are private MW4 cheats?',
+    a: a('Private means per-user keys and maintained builds—not public zip packs. MW4 Cheats ships portal delivery for ESP, aim assist and radar tiers.'),
   },
   {
     id: 'faq-more',
@@ -341,9 +341,9 @@ export function getAllFaqs(): SiteFaqItem[] {
 
 /** Shared FAQ block copy + filters (home, /faq/, products, blog). */
 export const SITE_FAQ_SECTION_COPY = {
-  eyebrow: 'Rust topics',
-  title: 'Browse Rust cheat answers by category',
-  subtitle: 'Filter Rust plans, ESP, aimbot, products, setup and buy-guide answers.',
+  eyebrow: 'MW4 topics',
+  title: 'Browse MW4 cheat answers by category',
+  subtitle: 'Filter MW4 plans, ESP, aimbot, products, setup and buy-guide answers.',
 } as const;
 
 export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
@@ -371,6 +371,25 @@ export function faqFilterTopicsForItems(items: SiteFaqItem[]): FaqTopic[] {
     if (topic !== 'all' && present.has(topic)) topics.push(topic);
   }
   return topics;
+}
+
+const FAQ_TOPIC_LABELS: Record<Exclude<FaqTopic, 'all'>, string> = {
+  plans: 'Plans, tiers & what to buy',
+  esp: 'ESP, radar & scripts',
+  scripts: 'Aimbot & recoil',
+  safety: 'Safety & ban risk',
+  products: 'Products & utilities',
+  blog: 'Blog & guides',
+  setup: 'Setup, loader & after purchase',
+};
+
+/** Anchor links to /faq/ topic sections for homepage ItemList JSON-LD (slug matches FaqSection id). */
+export function getFaqTopicItemList(): { name: string; url: string }[] {
+  const topics = SITE_FAQ_FILTER_TOPICS.filter((t) => t !== 'all') as Exclude<FaqTopic, 'all'>[];
+  return topics.map((topic) => ({
+    name: FAQ_TOPIC_LABELS[topic],
+    url: `/faq/#faq-topic-${topic}`,
+  }));
 }
 
 export function getProductFaqs(slug: string, kind: 'tier' | 'utility'): SiteFaqItem[] {
@@ -403,8 +422,8 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-guide-start',
       topic: 'blog',
       icon: 'faqBlogGuideStart',
-      q: 'Should I use F1 admin commands on official servers?',
-      a: a('No. Admin commands like noclip, god and give only work for admins on servers you own or moderate. Live-server play needs separate Rust cheats from rust-cheats.net tiers—and carries ban risk.'),
+      q: 'Do private-match dev toggles work in public MW4 lobbies?',
+      a: a('No. Bot settings and local-only toggles in Private Match do not carry into live Multiplayer or Warzone. For public lobbies you need MW4 Cheats tiers from mw4-cheats.net—and that carries ban risk.'),
     },
     {
       id: 'blog-guide-tier',
@@ -418,7 +437,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideStatus',
       q: 'Is this guide still valid after a patch?',
-      a: a('Check the article date and the live status banner. Patch-day articles note when modules change—Discord #status has the latest build notes after each Rust update or force wipe.'),
+      a: a('Check the article date and the live status banner. Patch-day articles note when modules change—Discord #status has the latest build notes after each MW4 update or major season update.'),
     },
   ],
   Setup: [
@@ -434,7 +453,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogSetupLobby',
       q: 'Should I test on a quiet server first?',
-      a: a('Yes. Load conservative presets on a low-pop or private server before busy Official or Community servers. Tune aim FOV, smoothing and ESP distance caps over several sessions.'),
+      a: a('Yes. Load conservative presets on a low-pop or Private Match before busy Multiplayer or Warzone servers. Tune aim FOV, smoothing and ESP distance caps over several sessions.'),
     },
   ],
   Features: [
@@ -443,7 +462,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideTier',
       q: 'Are all modules in this article on every tier?',
-      a: `No. Lite is ESP, radar and FOV only; ${pro} adds Aimbot, Soft Aim and No Recoil; ${elite} adds farm helpers and Skin Changer. Check the compare table before checkout.`,
+      a: `No. Lite is ESP, radar and FOV only; ${pro} adds Aimbot, Soft Aim and No Recoil; ${elite} adds camo helpers and Skin Changer. Check the compare table before checkout.`,
     },
   ],
   Updates: [
@@ -451,7 +470,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-updates-eac',
       topic: 'blog',
       icon: 'faqBlogSecVac',
-      q: 'How fast do builds update after an EAC patch?',
+      q: 'How fast do builds update after a Ricochet patch?',
       a: `Elite gets priority delivery; Lite and Pro follow once the build is verified. Do not launch until the banner is green—see the ${guidePatch}.`,
     },
   ],
@@ -460,8 +479,8 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-trouble-eac',
       topic: 'blog',
       icon: 'faqBlogSecVac',
-      q: 'Is an EAC error always a ban?',
-      a: a('No. Start with Steam file verification, an EAC reinstall and a clean restart. A ban message names the account or hardware; startup errors usually do not.'),
+      q: 'Is a Ricochet error always a ban?',
+      a: a('No. Start with Steam file verification, a Ricochet reinstall and a clean restart. A ban message names the account or hardware; startup errors usually do not.'),
     },
   ],
   Security: [
@@ -495,7 +514,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault3',
     q: 'Will settings in this article work next patch?',
-    a: a('Re-check status after every Rust update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
+    a: a('Re-check status after every MW4 update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
   },
 ];
 
@@ -509,7 +528,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       topic: 'esp',
       icon: 'faqBlogSlugEsp',
       q: 'Which tier covers ESP and radar from this article?',
-      a: `${lite} includes Player ESP, Loot & Resource ESP, radar and FOV hack. ${pro} adds aim assist on the same overlay stack.`,
+      a: `${lite} includes Player ESP, Equipment & Streak ESP, radar and FOV hack. ${pro} adds aim assist on the same overlay stack.`,
     });
   }
   if (slug.includes('script') || slug.includes('combo') || slug.includes('recoil') || slug.includes('aim')) {
@@ -527,7 +546,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       topic: 'products',
       icon: 'faqBlogSlugHwid',
       q: 'Does this article replace HWID or UGC products?',
-      a: `Recovery and EAC guides complement ${hwid} and ${ugc}—read product pages for workflow scope and realistic outcomes.`,
+      a: `Recovery and Ricochet guides complement ${hwid} and ${ugc}—read product pages for workflow scope and realistic outcomes.`,
     });
   }
   if (slug.includes('stream')) {
@@ -555,7 +574,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
 export const compareRows = [
   { feature: 'Player ESP (boxes, names, health)', icon: 'comparePlayerEsp' as const, lite: true, pro: true, elite: true },
   { feature: 'Skeleton ESP', icon: 'skeletonEsp' as const, lite: true, pro: true, elite: true },
-  { feature: 'Loot & Resource ESP', icon: 'lootEsp' as const, lite: true, pro: true, elite: true },
+  { feature: 'Equipment & Streak ESP', icon: 'lootEsp' as const, lite: true, pro: true, elite: true },
   { feature: 'Radar overlay', icon: 'compareMinimapHack' as const, lite: true, pro: true, elite: true },
   { feature: 'FOV Hack', icon: 'compareZoomHack' as const, lite: true, pro: true, elite: true },
   { feature: 'Stream Proof overlay', icon: 'compareStreamproof' as const, lite: true, pro: true, elite: true },
@@ -565,9 +584,9 @@ export const compareRows = [
   { feature: 'Bone Select (head / chest / body)', icon: 'boneSelect' as const, lite: false, pro: true, elite: true },
   { feature: 'Aim FOV circle & target selector', icon: 'compareTargetSelector' as const, lite: false, pro: true, elite: true },
   { feature: 'No Recoil / Spread', icon: 'noRecoil' as const, lite: false, pro: true, elite: true },
-  { feature: 'Weapon recoil profiles (AK, LR-300, MP5)', icon: 'stepCrosshair' as const, lite: false, pro: true, elite: true },
+  { feature: 'Weapon recoil profiles (AK, TAQ-56, VEL 46)', icon: 'stepCrosshair' as const, lite: false, pro: true, elite: true },
   { feature: 'Trigger Bot', icon: 'triggerBot' as const, lite: false, pro: true, elite: true },
-  { feature: 'Auto Farm Helpers', icon: 'compareAutoFarm' as const, lite: false, pro: false, elite: true },
+  { feature: 'Camo & XP Helpers', icon: 'compareAutoFarm' as const, lite: false, pro: false, elite: true },
   { feature: 'Full radar suite (UAV-style)', icon: 'uavRadar' as const, lite: false, pro: false, elite: true },
   { feature: 'Skin Changer (Unlock All)', icon: 'compareSkinChanger' as const, lite: false, pro: false, elite: true },
   { feature: 'Priority patch queue', icon: 'comparePriorityPatch' as const, lite: false, pro: false, elite: true },

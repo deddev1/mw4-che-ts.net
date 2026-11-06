@@ -1,12 +1,14 @@
 ---
 import "@/styles/starwind.css";
 import { t } from '../i18n';
+import { ThemeInitScript } from '@starwind-ui/astro/theme';
 import {
   RSS_FEED_PATH,
   TWITTER_CREATOR,
   TWITTER_SITE,
   canonicalUrl,
   DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
   GA_MEASUREMENT_ID,
@@ -26,6 +28,8 @@ interface Props {
   articlePublishedTime?: string;
   articleModifiedTime?: string;
   noindex?: boolean;
+  /** When set, canonical/og:url/hreflang use this path (e.g. blog URL for forum threads sourced from guides). */
+  canonicalPath?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -33,15 +37,18 @@ const {
   title = t.site.title,
   description = t.site.description,
   ogImage = DEFAULT_OG_IMAGE,
-  ogImageAlt = title,
+  ogImageAlt = DEFAULT_OG_IMAGE_ALT,
   ogType = 'website',
   articlePublishedTime,
   articleModifiedTime,
   noindex = false,
+  canonicalPath,
   jsonLd,
 } = Astro.props;
 
-const canonical = canonicalUrl(Astro.url.pathname);
+const canonical = canonicalPath
+  ? canonicalUrl(canonicalPath)
+  : canonicalUrl(Astro.url.pathname);
 const ogImageUrl = absoluteAssetUrl(ogImage);
 const robotsContent = noindex
   ? 'noindex, nofollow'
@@ -49,19 +56,10 @@ const robotsContent = noindex
 ---
 
 <!doctype html>
-<html lang="en" class="dark fonts-pending">
+<html lang="en" class="fonts-pending">
   <head>
     <meta charset="UTF-8" />
-    <script is:inline>
-      (function () {
-        try {
-          var stored = localStorage.getItem('colorTheme') || localStorage.getItem('starwind-theme');
-          if (stored === 'light') document.documentElement.classList.remove('dark');
-          else if (stored === 'dark') document.documentElement.classList.add('dark');
-        } catch (e) {}
-        document.documentElement.classList.add('fonts-pending');
-      })();
-    </script>
+    <ThemeInitScript defaultTheme="dark" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style is:global set:html={responsiveDocumentCss}></style>
     <title>{title}</title>

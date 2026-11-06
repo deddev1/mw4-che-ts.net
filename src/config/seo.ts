@@ -1,14 +1,16 @@
 import { t } from '../i18n';
+import { DEFAULT_GAMEPLAY_ALT, gameplayGallery } from '../data/gameplayImages';
 import { SITE_DOMAIN as INDEXNOW_HOST_NAME } from './site';
 import { getPageSeoEntry } from './pageSeo';
 
 export const SITE_ORIGIN = `https://${t.site.domain}`;
 
-export const DEFAULT_OG_IMAGE = '/images/gameplay/rust-map-hack.png';
+export const DEFAULT_OG_IMAGE = gameplayGallery.gp01.src;
+export const DEFAULT_OG_IMAGE_ALT = DEFAULT_GAMEPLAY_ALT;
 
 export const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
 
-/** @example @rustcheats */
+/** @example @mw4cheats */
 export const TWITTER_SITE = import.meta.env.PUBLIC_TWITTER_SITE as string | undefined;
 
 export const TWITTER_CREATOR = import.meta.env.PUBLIC_TWITTER_CREATOR as string | undefined;
@@ -27,9 +29,15 @@ export const INDEXNOW_KEY = import.meta.env.INDEXNOW_KEY as string | undefined;
 
 export function canonicalUrl(pathname: string): string {
   let path = pathname || '/';
+  const hashIdx = path.indexOf('#');
+  let hash = '';
+  if (hashIdx !== -1) {
+    hash = path.slice(hashIdx);
+    path = path.slice(0, hashIdx);
+  }
   if (!path.startsWith('/')) path = `/${path}`;
   if (path !== '/' && !path.endsWith('/')) path = `${path}/`;
-  return `${SITE_ORIGIN}${path}`;
+  return `${SITE_ORIGIN}${path}${hash}`;
 }
 
 export function absoluteAssetUrl(path: string): string {
@@ -48,8 +56,11 @@ export function pageTitle(keyword: string, brand = t.site.name): string {
   const suffix = ` | ${brand}`;
   const max = 60;
   if (`${keyword}${suffix}`.length <= max) return `${keyword}${suffix}`;
-  const trimmed = keyword.slice(0, Math.max(20, max - suffix.length - 1)).trim();
-  return `${trimmed}${suffix}`;
+  const budget = Math.max(20, max - suffix.length - 1);
+  let cut = keyword.slice(0, budget);
+  const lastSpace = cut.lastIndexOf(' ');
+  if (lastSpace > 8) cut = cut.slice(0, lastSpace);
+  return `${cut.trimEnd()}${suffix}`;
 }
 
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;

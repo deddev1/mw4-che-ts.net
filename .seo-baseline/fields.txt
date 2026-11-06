@@ -1,39 +1,39 @@
 === index.html ===
-Rust Cheats &amp; Hacks | ESP, Aimbot &amp; Radar
-Rust cheats for PC: player ESP, loot ESP, aimbot, no recoil, and stream-proof overlays updated every wipe at rust-cheats.net.
-https://rust-cheats.net/
+MW4 Cheats &amp; Hacks | ESP, Aimbot &amp; Radar
+MW4 cheats for PC: player ESP, loot ESP, aimbot, no recoil, and stream-proof overlays updated every season at mw4-cheats.net.
+https://mw4-cheats.net/
 
-=== products/rust-cheats/index.html ===
-Rust Elite Cheats &amp; Utility Products
-Elite rust cheats plus HWID spoofer, UGC tools, and Skin Changer utilities for Steam on rust-cheats.net.
-https://rust-cheats.net/products/rust-cheats/
+=== products/mw4-cheats/index.html ===
+MW4 Elite Cheats &amp; Utility Products
+Elite mw4 cheats plus HWID spoofer, UGC tools, and Skin Changer utilities for Steam on mw4-cheats.net.
+https://mw4-cheats.net/products/mw4-cheats/
 
-=== products/rust-cheats/elite/index.html ===
-Rust Elite Cheats | Full ESP &amp; Combat Suite
-Elite tier: player ESP, loot ESP, aimbot, no recoil, farm helpers, and priority EAC patch delivery.
-https://rust-cheats.net/products/rust-cheats/elite/
+=== products/mw4-cheats/elite/index.html ===
+MW4 Elite Cheats | Full ESP &amp; Combat Suite
+Elite tier: player ESP, loot ESP, aimbot, no recoil, camo helpers, and priority Ricochet patch delivery.
+https://mw4-cheats.net/products/mw4-cheats/elite/
 
 === blog/index.html ===
-Rust Cheats Guides &amp; Patch Notes
-Setup guides, Lite vs Pro comparisons, EAC patch checklists, and PVP config tips for rust cheats.
-https://rust-cheats.net/blog/
+MW4 Cheats Guides &amp; Patch Notes
+Setup guides, Lite vs Pro comparisons, Ricochet patch checklists, and PVP config tips for mw4 cheats.
+https://mw4-cheats.net/blog/
 
-=== blog/rust-cheats-features-guide/index.html ===
-Rust cheats features: ESP, aimbot, radar and more | Rust Cheats
-Complete guide to our rust cheats—player ESP, loot ESP, aimbot, no recoil, FOV and stream proof.
-https://rust-cheats.net/blog/rust-cheats-features-guide/
+=== blog/mw4-cheats-features-guide/index.html ===
+MW4 cheats features: ESP, aimbot, radar and more | MW4 Cheats
+Complete guide to our mw4 cheats—player ESP, loot ESP, aimbot, no recoil, FOV and stream proof.
+https://mw4-cheats.net/blog/mw4-cheats-features-guide/
 
 === faq/index.html ===
-FAQ | Rust Cheats, Products &amp; Setup
-Answers on cheat tiers, ESP, aimbot, HWID tools, checkout, and blog guides at rust-cheats.net.
-https://rust-cheats.net/faq/
+FAQ | MW4 Cheats, Products &amp; Setup
+Answers on cheat tiers, ESP, aimbot, HWID tools, checkout, and blog guides at mw4-cheats.net.
+https://mw4-cheats.net/faq/
 
 === support/index.html ===
-Support | Rust Cheats
-Get help with loader setup, HWID, and checkout for Rust cheat tiers and utilities.
-https://rust-cheats.net/support/
+Support | MW4 Cheats
+Get help with loader setup, HWID, and checkout for MW4 cheat tiers and utilities.
+https://mw4-cheats.net/support/
 
 === 404.html ===
-Page not found | Rust Cheats
-The page you requested could not be found on rust-cheats.net.
-https://rust-cheats.net/404/
+Page not found | MW4 Cheats
+The page you requested could not be found on mw4-cheats.net.
+https://mw4-cheats.net/404/

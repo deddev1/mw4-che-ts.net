@@ -7,19 +7,19 @@ import ProductsSection from '../components/ProductsSection.astro';
 import ContentSections from '../components/ContentSections.astro';
 import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
-import { faqPageSchema, organizationSchema, websiteSchema } from '../utils/schema';
-import { getLandingFaqs } from '../data/faq';
+import { itemListSchema, organizationSchema, websiteSchema } from '../utils/schema';
+import { getFaqTopicItemList } from '../data/faq';
 import { webpSrc } from '../utils/responsiveImage';
 
 const seo = resolvePageSeo('/');
-const homeFaqs = getLandingFaqs();
-const heroLcpImage = webpSrc('/images/gameplay/rust-map-hack.png', 512);
+const heroLcpImage = webpSrc('/images/gameplay/mw4-gameplay-01.png', 512);
+const faqTopicLinks = getFaqTopicItemList();
 ---
 
 <BaseLayout
   title={seo.title}
   description={seo.description}
-  jsonLd={[websiteSchema(), organizationSchema(), faqPageSchema(homeFaqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') })))]}
+  jsonLd={[websiteSchema(), organizationSchema(), itemListSchema(faqTopicLinks)]}
 >
   <link
     slot="head"

@@ -24,11 +24,11 @@ export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Rust Cheats',
+    name: 'MW4 Cheats',
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays at rust-cheats.net.',
+      'Shop undetected MW4 cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays at mw4-cheats.net.',
   };
 }
 
@@ -38,7 +38,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Rust Cheats',
+    name: 'MW4 Cheats',
     url: `${SITE_ORIGIN}/`,
     logo: `${SITE_ORIGIN}/logo.svg`,
     email: SUPPORT_EMAIL,
@@ -66,7 +66,7 @@ export function collectionPageSchema(input: { name: string; description: string;
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Rust Cheats',
+      name: 'MW4 Cheats',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -82,7 +82,7 @@ export function webPageSchema(input: { name: string; description: string; url: s
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Rust Cheats',
+      name: 'MW4 Cheats',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -131,7 +131,7 @@ export function discussionForumPostingSchema(input: {
     url: canonicalUrl(input.url),
     author: { '@type': 'Person', name: input.author },
     commentCount: input.comments,
-    isPartOf: { '@type': 'CollectionPage', name: 'Rust Cheats Community Forum', url: canonicalUrl('/forum/') },
+    isPartOf: { '@type': 'CollectionPage', name: 'MW4 Cheats Community Forum', url: canonicalUrl('/forum/') },
   };
 }
 
@@ -140,6 +140,13 @@ function offerUrl(path: string): string {
   return canonicalUrl(path);
 }
 
+function offerPriceValidUntil(): string {
+  const d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Product + checkout links: use this for cheat/utility detail pages (not SoftwareApplication). */
 export function productSchema(input: {
   name: string;
   description: string;
@@ -147,6 +154,9 @@ export function productSchema(input: {
   offerUrl: string;
   image?: string;
   sku?: string;
+  priceLow: number;
+  priceHigh: number;
+  offerCount: number;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -156,37 +166,24 @@ export function productSchema(input: {
     sku: input.sku ?? input.url.replace(/\//g, '-'),
     brand: {
       '@type': 'Brand',
-      name: 'Rust Cheats',
+      name: 'MW4 Cheats',
     },
     ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
     offers: {
-      '@type': 'Offer',
+      '@type': 'AggregateOffer',
       url: offerUrl(input.offerUrl),
       priceCurrency: 'USD',
+      lowPrice: input.priceLow,
+      highPrice: input.priceHigh,
+      offerCount: input.offerCount,
+      priceValidUntil: offerPriceValidUntil(),
       availability: 'https://schema.org/InStock',
       seller: {
         '@type': 'Organization',
-        name: 'Rust Cheats',
+        name: 'MW4 Cheats',
       },
     },
   };
-}
-
-/** @deprecated Prefer productSchema for product/cheat detail pages. */
-export function softwareApplicationSchema(input: {
-  name: string;
-  description: string;
-  url: string;
-  image?: string;
-  offerUrl?: string;
-}) {
-  return productSchema({
-    name: input.name,
-    description: input.description,
-    url: input.url,
-    offerUrl: input.offerUrl ?? input.url,
-    image: input.image,
-  });
 }
 
 export function articleSchema(input: {
@@ -209,11 +206,11 @@ export function articleSchema(input: {
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',
-      name: 'Rust Cheats',
+      name: 'MW4 Cheats',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Rust Cheats',
+      name: 'MW4 Cheats',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_ORIGIN}/logo.svg`,

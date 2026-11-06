@@ -1,12 +1,26 @@
 import sharp from 'sharp';
 import { writeFileSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
-const src =
-  'C:/Users/3Tee System/.cursor/projects/c-Users-3Tee-System-Downloads-rust-cheats-net-main/assets/6025c64d0d4240bbacbe71e79559d882-b1d6079b-f29e-4d15-bea5-512ad7e3695f.jpg';
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+/** Replace this file with your own square/circular artwork (PNG or JPEG). */
+const sourcePath = path.join(root, 'scripts/favicon-source.png');
+
+const resizeOpts = {
+  fit: 'cover',
+  position: 'center',
+};
+
+function src() {
+  return sharp(sourcePath);
+}
 
 const sizes = [
   ['favicon-16.png', 16],
   ['favicon-32.png', 32],
+  ['favicon-192.png', 192],
+  ['favicon-512.png', 512],
   ['apple-touch-icon.png', 180],
   ['android-chrome-192.png', 192],
   ['android-chrome-512.png', 512],
@@ -14,7 +28,7 @@ const sizes = [
 ];
 
 for (const [name, size] of sizes) {
-  await sharp(src).resize(size, size, { fit: 'cover' }).png().toFile(`public/${name}`);
+  await src().resize(size, size, resizeOpts).png().toFile(path.join(root, 'public', name));
 }
 
 function pngToIco(pngBuffers) {
@@ -43,18 +57,21 @@ function pngToIco(pngBuffers) {
   return Buffer.concat([header, ...entries, ...pngBuffers]);
 }
 
-const p16 = await sharp(src).resize(16, 16).png().toBuffer();
-const p32 = await sharp(src).resize(32, 32).png().toBuffer();
-const p48 = await sharp(src).resize(48, 48).png().toBuffer();
-writeFileSync('public/favicon.ico', pngToIco([p16, p32, p48]));
+const p16 = await src().resize(16, 16, resizeOpts).png().toBuffer();
+const p32 = await src().resize(32, 32, resizeOpts).png().toBuffer();
+const p48 = await src().resize(48, 48, resizeOpts).png().toBuffer();
+writeFileSync(path.join(root, 'public/favicon.ico'), pngToIco([p16, p32, p48]));
 
-const png64 = (await sharp(src).resize(128, 128).png().toBuffer()).toString('base64');
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Rust Cheats">
-  <image href="data:image/png;base64,${png64}" width="128" height="128"/>
+const svgWrapper = (href) => `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="MW4 Cheats">
+  <image href="${href}" width="512" height="512" preserveAspectRatio="xMidYMid slice"/>
 </svg>
 `;
-writeFileSync('public/favicon.svg', svg);
-writeFileSync('public/logo.svg', svg);
 
-console.log('Wrote favicon.ico bytes', readFileSync('public/favicon.ico').length);
-console.log('Wrote favicon.svg + logo.svg + png sizes');
+writeFileSync(path.join(root, 'public/favicon.svg'), svgWrapper('/favicon-512.png'));
+writeFileSync(path.join(root, 'public/logo.svg'), svgWrapper('/favicon-512.png'));
+
+// Optional: full-size copy for reference / OG fallbacks
+writeFileSync(path.join(root, 'public/favicon.png'), readFileSync(path.join(root, 'public/favicon-512.png')));
+
+console.log('Wrote favicon from scripts/favicon-source.png → favicon.ico, favicon.svg, logo.svg, PNG sizes');

@@ -50,6 +50,11 @@ const topicLabels: Record<FaqTopic, string> = {
 };
 
 const filters = filterTopics ?? (['all', 'plans', 'esp', 'scripts', 'safety', 'products'] as FaqTopic[]);
+
+const firstIndexByTopic = new Map<FaqTopic, number>();
+items.forEach((faq, i) => {
+  if (!firstIndexByTopic.has(faq.topic)) firstIndexByTopic.set(faq.topic, i);
+});
 ---
 
 <section
@@ -96,7 +101,16 @@ const filters = filterTopics ?? (['all', 'plans', 'esp', 'scripts', 'safety', 'p
 
     <Accordion type="single" collapsible class="mt-8 w-full" data-faq-list>
       {items.map((faq, i) => (
-        <div data-faq-topic={faq.topic}>
+        <div
+          id={
+            faq.topic === 'all'
+              ? undefined
+              : firstIndexByTopic.get(faq.topic) === i
+                ? `faq-topic-${faq.topic}`
+                : undefined
+          }
+          data-faq-topic={faq.topic}
+        >
           <AccordionItem value={`faq-${i}`}>
             <AccordionTrigger class="text-left">
               <span class="flex items-center gap-2">

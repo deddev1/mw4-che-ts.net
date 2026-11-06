@@ -47,15 +47,3 @@ const { class: className, ariaLabel = 'Toggle light and dark mode', size = 'defa
     </div>
   </div>
 </label>
-
-<script>
-  import { initThemeController } from '@starwind-ui/astro/theme';
-
-  const setupThemeController = () => {
-    initThemeController();
-  };
-
-  setupThemeController();
-  document.addEventListener('astro:after-swap', setupThemeController);
-  document.addEventListener('starwind:init', setupThemeController);
-</script>

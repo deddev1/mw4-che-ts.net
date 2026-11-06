@@ -7,7 +7,7 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  rust: 'rust',
+  mw4: 'mw4',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
   ugc: 'ugc',
@@ -18,22 +18,22 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Zadeyo affiliate URL for visible “Get access” / buy CTAs (same tab — no target=_blank). */
-export function checkoutPath(product: CheckoutProduct = 'rust'): string {
+export function checkoutPath(product: CheckoutProduct = 'mw4'): string {
   return CHECKOUT[product];
 }
 
-/** Internal /go/* path (blog links, bookmarks); 302 to Zadeyo via public/_redirects. */
-export function checkoutRedirectPath(product: CheckoutProduct = 'rust'): string {
+/** Internal /go/* path (blog links, bookmarks); HTML redirect pages in src/pages/go/ then client navigates to Zadeyo. */
+export function checkoutRedirectPath(product: CheckoutProduct = 'mw4'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
 /** Alias used by /go/[slug] static redirect pages. */
-export function checkoutExternalUrl(product: CheckoutProduct = 'rust'): string {
+export function checkoutExternalUrl(product: CheckoutProduct = 'mw4'): string {
   return CHECKOUT[product];
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('rust');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('mw4');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
@@ -49,7 +49,7 @@ export function checkoutForSlug(slug: string): string {
     case 'pro':
     case 'elite':
     default:
-      return checkoutPath('rust');
+      return checkoutPath('mw4');
   }
 }
 
@@ -83,15 +83,15 @@ export function resolveCheckoutHref(href: string): string {
     return checkoutPath('ugc');
   }
   if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('rust');
+    return checkoutPath('mw4');
   }
   if (
-    href.includes('%2Fproducts%2Fdota-2') ||
-    href.includes('/products/dota-2') ||
-    href.includes('%2Fproducts%2Frust') ||
-    href.includes('/products/rust')
+    href.includes('%2Fproducts%2Fmw4') ||
+    href.includes('/products/mw4') ||
+    href.includes('%2Fproducts%2Fmw4') ||
+    href.includes('/products/mw4')
   ) {
-    return checkoutPath('rust');
+    return checkoutPath('mw4');
   }
 
   return href;
